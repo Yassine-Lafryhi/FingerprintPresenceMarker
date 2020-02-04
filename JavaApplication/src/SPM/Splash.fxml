@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="374.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SPM.Controller">
+   <children>
+      <ImageView fitHeight="421.0" fitWidth="647.0" layoutX="-22.0" layoutY="-21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Splash.png" />
+         </image>
+      </ImageView>
+      <ProgressBar layoutX="83.0" layoutY="252.0" prefHeight="20.0" prefWidth="434.0" progress="0.4" />
+   </children>
+</Pane>

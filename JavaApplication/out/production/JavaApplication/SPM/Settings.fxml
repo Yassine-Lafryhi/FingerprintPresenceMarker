@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="620.0" prefWidth="1017.0" style="-fx-background-radius: 5em;-fx-background-color:#2c2c54;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SPM.Controller">
+    <children>
+        <Label alignment="CENTER" layoutX="116.0" layoutY="-3.0" prefHeight="144.0" prefWidth="783.0" text="SMART PRESENCE&#10; MARKER" textAlignment="CENTER" textFill="white">
+            <font>
+                <Font name="American Typewriter Bold" size="53.0" />
+            </font>
+        </Label>
+        <Button layoutX="341.0" layoutY="531.0" mnemonicParsing="false" onAction="#LogIn" prefHeight="69.0" prefWidth="333.0" style="-fx-background-radius: 5em;-fx-background-color:#e74c3c;" text="Save" textFill="WHITE">
+            <font>
+                <Font name="American Typewriter Bold" size="36.0" />
+            </font>
+        </Button>
+        <Button layoutX="908.0" layoutY="6.0" mnemonicParsing="false" onAction="#Exit" prefHeight="42.0" prefWidth="71.0" style="-fx-background-radius: 5em;-fx-background-color:#eb3b5a;" text="×" textFill="WHITE">
+            <font>
+                <Font name="American Typewriter Bold" size="36.0" />
+            </font>
+        </Button>
+        <Button layoutX="40.0" layoutY="6.0" mnemonicParsing="false" onAction="#Minimize" prefHeight="42.0" prefWidth="71.0" style="-fx-background-radius: 5em;-fx-background-color:#4b7bec;" text="-" textFill="WHITE">
+            <font>
+                <Font name="American Typewriter Bold" size="36.0" />
+            </font>
+        </Button>
+      <TextField fx:id="UserNameTF" alignment="CENTER" layoutX="351.0" layoutY="154.0" prefHeight="69.0" prefWidth="632.0" style="-fx-background-radius: 5em;-fx-text-fill:#8e44ad;">
+         <font>
+            <Font name="American Typewriter Bold" size="36.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutX="13.0" layoutY="154.0" prefHeight="69.0" prefWidth="350.0" text="Username :" textAlignment="CENTER" textFill="white">
+         <font>
+            <Font name="American Typewriter Bold" size="53.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="PasswordTF" alignment="CENTER" layoutX="351.0" layoutY="268.0" prefHeight="69.0" prefWidth="632.0" style="-fx-background-radius: 5em;-fx-text-fill:#8e44ad;">
+         <font>
+            <Font name="American Typewriter Bold" size="36.0" />
+         </font>
+      </PasswordField>
+      <Label alignment="CENTER" layoutX="13.0" layoutY="268.0" prefHeight="69.0" prefWidth="350.0" text="Password :" textAlignment="CENTER" textFill="white">
+         <font>
+            <Font name="American Typewriter Bold" size="53.0" />
+         </font>
+      </Label>
+      <Label fx:id="LoginErrorTF" alignment="CENTER" layoutX="52.0" layoutY="457.0" prefHeight="69.0" prefWidth="914.0" style="-fx-text-fill:#e74c3c;" text=" ss" textAlignment="CENTER" textFill="white">
+         <font>
+            <Font name="American Typewriter Bold" size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="UserNameTF1" alignment="CENTER" layoutX="353.0" layoutY="380.0" prefHeight="69.0" prefWidth="443.0" style="-fx-background-radius: 5em;-fx-text-fill:#8e44ad;">
+         <font>
+            <Font name="American Typewriter Bold" size="36.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutX="15.0" layoutY="380.0" prefHeight="69.0" prefWidth="350.0" text="Data Path :" textAlignment="CENTER" textFill="white">
+         <font>
+            <Font name="American Typewriter Bold" size="53.0" />
+         </font>
+      </Label>
+      <Button layoutX="805.0" layoutY="380.0" mnemonicParsing="false" onAction="#LogIn" prefHeight="69.0" prefWidth="188.0" style="-fx-background-radius: 5em;-fx-background-color:#27ae60;" text="Browse" textFill="WHITE">
+         <font>
+            <Font name="American Typewriter Bold" size="36.0" />
+         </font>
+      </Button>
+    </children>
+</Pane>
