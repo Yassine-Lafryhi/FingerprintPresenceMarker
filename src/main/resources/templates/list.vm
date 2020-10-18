@@ -1,0 +1,257 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+    <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <style>
+        table {
+            mso-displayed-decimal-separator: "\.";
+            mso-displayed-thousand-separator: "\,";
+        }
+
+        @page {
+            margin: .75in .25in .75in .25in;
+            mso-header-margin: .3in;
+            mso-footer-margin: .3in;
+        }
+
+        tr {
+            mso-height-source: auto;
+        }
+
+        col {
+            mso-width-source: auto;
+        }
+
+        br {
+            mso-data-placement: same-cell;
+        }
+
+        .style0 {
+            mso-number-format: General;
+            text-align: general;
+            vertical-align: bottom;
+            white-space: nowrap;
+            mso-rotate: 0;
+            mso-background-source: auto;
+            mso-pattern: auto;
+            color: black;
+            font-size: 12.0pt;
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            font-family: Calibri, sans-serif;
+            mso-font-charset: 0;
+            border: none;
+            mso-protection: locked visible;
+            mso-style-name: Normal;
+            mso-style-id: 0;
+        }
+
+        td {
+            mso-style-parent: style0;
+            padding-top: 1px;
+            padding-right: 1px;
+            padding-left: 1px;
+            mso-ignore: padding;
+            color: black;
+            font-size: 12.0pt;
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            font-family: Calibri, sans-serif;
+            mso-font-charset: 0;
+            mso-number-format: General;
+            text-align: general;
+            vertical-align: bottom;
+            border: none;
+            mso-background-source: auto;
+            mso-pattern: auto;
+            mso-protection: locked visible;
+            white-space: nowrap;
+            mso-rotate: 0;
+        }
+
+        .xl63 {
+            mso-style-parent: style0;
+            font-size: 24.0pt;
+            font-family: saxmono;
+            mso-generic-font-family: auto;
+            mso-font-charset: 0;
+            text-align: center;
+            vertical-align: middle;
+            border: .5pt solid windowtext;
+        }
+
+        .xl64 {
+            mso-style-parent: style0;
+            font-size: 24.0pt;
+            font-weight: 700;
+            font-family: saxmono;
+            mso-generic-font-family: auto;
+            mso-font-charset: 0;
+            text-align: center;
+            vertical-align: middle;
+            border-top: .5pt solid windowtext;
+            border-right: none;
+            border-bottom: .5pt solid windowtext;
+            border-left: .5pt solid windowtext;
+        }
+
+        .xl65 {
+            mso-style-parent: style0;
+            font-size: 24.0pt;
+            font-weight: 700;
+            font-family: saxmono;
+            mso-generic-font-family: auto;
+            mso-font-charset: 0;
+            text-align: center;
+            vertical-align: middle;
+            border-top: .5pt solid windowtext;
+            border-right: none;
+            border-bottom: .5pt solid windowtext;
+            border-left: none;
+        }
+
+        .xl66 {
+            mso-style-parent: style0;
+            font-size: 24.0pt;
+            font-weight: 700;
+            font-family: saxmono;
+            mso-generic-font-family: auto;
+            mso-font-charset: 0;
+            text-align: center;
+            vertical-align: middle;
+            border-top: .5pt solid windowtext;
+            border-right: .5pt solid windowtext;
+            border-bottom: .5pt solid windowtext;
+            border-left: none;
+        }
+
+        .xl67 {
+            mso-style-parent: style0;
+            font-size: 24.0pt;
+            font-weight: 700;
+            font-family: saxmono;
+            mso-generic-font-family: auto;
+            mso-font-charset: 0;
+            mso-number-format: "Short Date";
+            text-align: center;
+            vertical-align: middle;
+            border-top: .5pt solid windowtext;
+            border-right: none;
+            border-bottom: .5pt solid windowtext;
+            border-left: .5pt solid windowtext;
+        }
+
+        .xl68 {
+            mso-style-parent: style0;
+            font-size: 24.0pt;
+            font-weight: 700;
+            font-family: saxmono;
+            mso-generic-font-family: auto;
+            mso-font-charset: 0;
+            text-align: center;
+            vertical-align: middle;
+            border: .5pt solid windowtext;
+            background: #92D050;
+            mso-pattern: black none;
+        }
+
+        .xl69 {
+            mso-style-parent: style0;
+            font-size: 20.0pt;
+            font-family: saxmono;
+            mso-generic-font-family: auto;
+            mso-font-charset: 0;
+            text-align: center;
+            vertical-align: middle;
+            border: .5pt solid windowtext;
+        }
+
+        .xl70 {
+            mso-style-parent: style0;
+            font-size: 20.0pt;
+            font-family: saxmono;
+            mso-generic-font-family: auto;
+            mso-font-charset: 0;
+            text-align: center;
+            vertical-align: middle;
+            border: .5pt solid windowtext;
+            background: #00B050;
+            mso-pattern: black none;
+        }
+
+        .xl71 {
+            mso-style-parent: style0;
+            font-size: 20.0pt;
+            font-family: saxmono;
+            mso-generic-font-family: auto;
+            mso-font-charset: 0;
+            text-align: center;
+            vertical-align: middle;
+            border: .5pt solid windowtext;
+            background: red;
+            mso-pattern: black none;
+        }
+    </style>
+</head>
+
+<body link="#0563C1" vlink="#954F72">
+<div id="Book1_15388" align=center>
+    #set( $count = 1 )
+    <table border=0 cellpadding=0 cellspacing=0 width=676 style='border-collapse:
+ collapse;table-layout:fixed;width:507pt'>
+        <col width=56 style='mso-width-source:userset;mso-width-alt:1792;width:42pt'>
+        <col width=236 style='mso-width-source:userset;mso-width-alt:7552;width:177pt'>
+        <col width=204 style='mso-width-source:userset;mso-width-alt:6528;width:153pt'>
+        <col width=180 style='mso-width-source:userset;mso-width-alt:5760;width:135pt'>
+        <tr height=44 style='height:33.0pt'>
+            <td colspan=4 height=44 class=xl64 width=676 style='border-right:.5pt solid black;
+  height:33.0pt;width:507pt'>$title
+            </td>
+        </tr>
+        <tr height=44 style='height:33.0pt'>
+            <td colspan=4 height=44 class=xl67 style='border-right:.5pt solid black;
+  height:33.0pt'>$date
+            </td>
+        </tr>
+        <tr height=44 style='mso-height-source:userset;height:33.0pt'>
+            <td colspan=4 height=44 class=xl64 style='border-right:.5pt solid black;
+  height:33.0pt'>$time
+            </td>
+        </tr>
+        <tr height=44 style='height:33.0pt'>
+            <td height=44 class=xl68 style='height:33.0pt;border-top:none'>Id</td>
+            <td class=xl68 style='border-top:none;border-left:none'>First Name</td>
+            <td class=xl68 style='border-top:none;border-left:none'>Last Name</td>
+            <td class=xl68 style='border-top:none;border-left:none'>Attendance</td>
+        </tr>
+        #foreach( $student in $students )
+        <tr height=33 style='mso-height-source:userset;height:25.0pt'>
+            <td height=33 class=xl69 style='height:25.0pt;border-top:none'>$count</td>
+            <td class=xl69 style='border-top:none;border-left:none'>$student.getFirstName()</td>
+            <td class=xl69 style='border-top:none;border-left:none'>$student.getLastName()</td>
+            #if($student.isAbsent())
+                <td class=xl71 style='border-top:none;border-left:none'>Absent</td>
+            #else
+                <td class=xl70 style='border-top:none;border-left:none'>Present</td>
+            </tr>
+            #end
+            #set( $count = $count + 1 )
+        #end
+        <tr height=495 style='mso-height-source:userset;height:375.0pt;mso-xlrowspan:15'>
+            <td height=495 colspan=4 style='height:375.0pt;mso-ignore:colspan'></td>
+        </tr>
+        <tr height=33 style='mso-height-source:userset;height:25.0pt'>
+            <td height=33 colspan=4 style='height:25.0pt;mso-ignore:colspan'></td>
+        </tr>
+        <tr height=0 style='display:none'>
+            <td width=56 style='width:42pt'></td>
+            <td width=236 style='width:177pt'></td>
+            <td width=204 style='width:153pt'></td>
+            <td width=180 style='width:135pt'></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

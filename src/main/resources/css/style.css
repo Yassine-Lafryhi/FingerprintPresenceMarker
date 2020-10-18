@@ -1,0 +1,55 @@
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .content {
+    -fx-background-color: transparent;
+}
+
+.text-area {
+    -fx-background-color: #c0392b;
+    -fx-background-radius: 5em;
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 5em;
+    -fx-padding: 10 10 10 10;
+}
+
+.progress-indicator .percentage {
+    -fx-fill: null;
+}
+
+.date-picker > .text-field {
+    -fx-alignment: CENTER;
+    -fx-font-family: "DINRoundPro-Medi";
+    -fx-font-size: 36px;
+
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #2c3e50;
+}
+
+.progress-bar {
+    -fx-indeterminate-bar-length: 60;
+    -fx-indeterminate-bar-escape: true;
+    -fx-indeterminate-bar-flip: true;
+    -fx-indeterminate-bar-animation-time: 2;
+}
+
+.progress-bar > .bar {
+    -fx-background-color: #2ecc71;
+
+}
+
+.progress-bar:indeterminate > .bar {
+    -fx-background-color: linear-gradient(to left, transparent, -fx-accent);
+}
+
+.progress-bar > .track {
+    -fx-opacity: 0;
+
+}

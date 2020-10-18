@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+group 'me.fingerprint.presence.marker'
+version '1.0.0'
+sourceCompatibility = 1.8
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation 'org.slf4j:slf4j-simple:1.7.25'
+    implementation 'org.xerial:sqlite-jdbc:3.8.11.2'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'org.scream3r:jssc:2.8.0'
+    implementation 'com.itextpdf:html2pdf:2.1.6'
+    implementation 'com.itextpdf:itext7-core:7.1.9'
+    implementation 'org.apache.velocity:velocity-engine-core:2.2'
+}

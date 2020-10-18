@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="803.0" prefWidth="1083.0" style="-fx-background-radius: 5em;-fx-background-color:#2c3e50;"
+      xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="me.fingerprint.presence.marker.controllers.Controller">
+    <children>
+        <Button layoutX="36.0" layoutY="578.0" mnemonicParsing="false" onAction="#getList" prefHeight="100.0"
+                prefWidth="196.0" style="-fx-background-radius: 5em;-fx-background-color:#f39c12;" text="Session 4"
+                textFill="WHITE">
+            <font>
+                <Font name="DINRoundPro-Medi" size="32.0"/>
+            </font>
+        </Button>
+        <Button layoutX="36.0" layoutY="458.0" mnemonicParsing="false" onAction="#getList" prefHeight="100.0"
+                prefWidth="196.0" style="-fx-background-radius: 5em;-fx-background-color:#f39c12;" text="Session 3"
+                textFill="WHITE">
+            <font>
+                <Font name="DINRoundPro-Medi" size="32.0"/>
+            </font>
+        </Button>
+        <Button layoutX="36.0" layoutY="333.0" mnemonicParsing="false" onAction="#getList" prefHeight="100.0"
+                prefWidth="196.0" style="-fx-background-radius: 5em;-fx-background-color:#f39c12;" text="Session 2"
+                textFill="WHITE">
+            <font>
+                <Font name="DINRoundPro-Medi" size="32.0"/>
+            </font>
+        </Button>
+        <Button layoutX="36.0" layoutY="211.0" mnemonicParsing="false" onAction="#getList" prefHeight="100.0"
+                prefWidth="196.0" style="-fx-background-radius: 5em;-fx-background-color:#f39c12;" text="Session 1"
+                textFill="WHITE">
+            <font>
+                <Font name="DINRoundPro-Medi" size="32.0"/>
+            </font>
+        </Button>
+        <Label alignment="CENTER" layoutX="-3.0" layoutY="-3.0" prefHeight="79.0" prefWidth="1091.0"
+               text="Fingerprint Presence Marker" textAlignment="CENTER" textFill="white">
+            <font>
+                <Font name="DINRoundPro-Medi" size="53.0"/>
+            </font>
+        </Label>
+        <Button fx:id="connectButton" layoutX="29.0" layoutY="92.0" mnemonicParsing="false" onAction="#connect"
+                prefHeight="69.0" prefWidth="333.0" style="-fx-background-radius: 5em;-fx-background-color:#e74c3c;"
+                text="Connect" textFill="WHITE">
+            <font>
+                <Font name="DINRoundPro-Medi" size="36.0"/>
+            </font>
+        </Button>
+        <DatePicker fx:id="datePicker" layoutX="388.0" layoutY="92.0" prefHeight="69.0" prefWidth="373.0">
+
+        </DatePicker>
+        <Button layoutX="784.0" layoutY="92.0" mnemonicParsing="false" onAction="#getList" prefHeight="69.0"
+                prefWidth="264.0" style="-fx-background-radius: 5em;-fx-background-color:#3498db;" text="Get Data"
+                textFill="WHITE">
+            <font>
+                <Font name="DINRoundPro-Medi" size="36.0"/>
+            </font>
+        </Button>
+        <Button layoutX="967.0" layoutY="6.0" mnemonicParsing="false" onAction="#Exit" prefHeight="42.0"
+                prefWidth="71.0" style="-fx-background-radius: 5em;-fx-background-color:#c0392b;" text="×"
+                textFill="WHITE">
+            <font>
+                <Font name="DINRoundPro-Medi" size="36.0"/>
+            </font>
+        </Button>
+        <Button layoutX="40.0" layoutY="6.0" mnemonicParsing="false" onAction="#Minimize" prefHeight="42.0"
+                prefWidth="71.0" style="-fx-background-radius: 5em;-fx-background-color:#c0392b;" text="-"
+                textFill="WHITE">
+            <font>
+                <Font name="DINRoundPro-Medi" size="36.0"/>
+            </font>
+        </Button>
+
+
+        <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="246.0" layoutY="187.0" pannable="true"
+                    prefHeight="510.0" prefWidth="809.0" style="-fx-background-color:#2c3e50;" vbarPolicy="NEVER">
+            <Pane fx:id="pane" style="-fx-background-color:#2c3e50;"/>
+        </ScrollPane>
+        <Button layoutX="21.0" layoutY="716.0" mnemonicParsing="false" onAction="#openPdfFile" prefHeight="69.0"
+                prefWidth="470.0" style="-fx-background-radius: 5em;-fx-background-color:#2ecc71;" text="Open PDF List"
+                textFill="WHITE">
+            <font>
+                <Font name="DINRoundPro-Medi" size="28.0"/>
+            </font>
+        </Button>
+        <Button layoutX="537.0" layoutY="716.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="516.0"
+                style="-fx-background-radius: 5em;-fx-background-color:#2ecc71;" text="Open CSV List" textFill="WHITE">
+            <font>
+                <Font name="DINRoundPro-Medi" size="28.0"/>
+            </font>
+        </Button>
+    </children>
+</Pane>
