@@ -6,53 +6,42 @@
 #include <Wire.h>
 #include <DS1307RTC.h>
 #include <SoftwareSerial.h>
-File myFile;
-SoftwareSerial mySerial(2, 3);
-Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
-bool sp[80];//student_present
-uint8_t id;
+File file;
+SoftwareSerial serial(2, 3);
+Adafruit_Fingerprint fingerprint = Adafruit_Fingerprint(&serial);
+bool students[80];
 const int rs = 9, en = 10, d4 = 7, d5 = 8, d6 = 5, d7 = 14;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 void setup()
 {
   lcd.begin(16, 2);
-  mettez_doigt();
+  putYourFinger();
   Serial.begin(9600);
-  while (!Serial);  // For Yun/Leo/Micro/Zero/...
+  while (!Serial);
   setSyncProvider(RTC.get);
   delay(100);
   if (!SD.begin(4)) {
     while (1);
   }
-  finger.begin(57600);
+  fingerprint.begin(57600);
  }
-uint8_t readnumber(void) {
-  uint8_t num = 0;
-  
-  while (num == 0) {
-    while (! Serial.available());
-    num = Serial.parseInt();
-  }
-  return num;
-}
-void loop()                     // run over and over again
+void loop()
 {
-  String T = String(year()) + "/" + String(month()) + "/" + String(day());
-  if (Serial.readString() == T) {
-    myFile = SD.open(T + "/l");
-    if (myFile) {
-      while (myFile.available()) {
- 
-        Serial.write(myFile.read());
+  String date = String(year()) + "/" + String(month()) + "/" + String(day());
+  if (Serial.readString() == date) {
+    file = SD.open(date + "/l");
+    if (file) {
+      while (file.available()) {
+        Serial.write(file.read());
       }
-      myFile.close();
+      file.close();
     }
   }
   getFingerprintIDez();
-  delay(50);            //don't ned to run this at full speed.
+  delay(50);
 }
 uint8_t getFingerprintID() {
-  uint8_t p = finger.getImage();
+  uint8_t p = fingerprint.getImage();
   switch (p) {
     case FINGERPRINT_OK:
       //Serial.println("Image taken");
@@ -71,7 +60,7 @@ uint8_t getFingerprintID() {
       return p;
   }
   // OK success!
-  p = finger.image2Tz();
+  p = fingerprint.image2Tz();
   switch (p) {
     case FINGERPRINT_OK:
       // Serial.println("Image converted");
@@ -93,7 +82,7 @@ uint8_t getFingerprintID() {
       return p;
   }
   // OK converted!
-  p = finger.fingerFastSearch();
+  p = fingerprint.fingerFastSearch();
   if (p == FINGERPRINT_OK) {
     //  Serial.println("Found a print match!");
   } else if (p == FINGERPRINT_PACKETRECIEVEERR) {
@@ -107,35 +96,35 @@ uint8_t getFingerprintID() {
     return p;
   }
   // found a match!
-  /*Serial.print("Found ID #"); Serial.print(finger.fingerID);
-    Serial.print(" with confidence of "); Serial.println(finger.confidence); */
-  return finger.fingerID;
+  /*Serial.print("Found ID #"); Serial.print(fingerprint.fingerID);
+    Serial.print(" with confidence of "); Serial.println(fingerprint.confidence); */
+  return fingerprint.fingerID;
 }
 // returns -1 if failed, otherwise returns ID #
 int getFingerprintIDez() {
-  uint8_t p = finger.getImage();
+  uint8_t p = fingerprint.getImage();
   if (p != FINGERPRINT_OK)  return -1;
-  p = finger.image2Tz();
+  p = fingerprint.image2Tz();
   if (p != FINGERPRINT_OK)  return -1;
-  p = finger.fingerFastSearch();
+  p = fingerprint.fingerFastSearch();
   if (p != FINGERPRINT_OK)  return -1;
-  process_student(finger.fingerID);
+  processStudent(fingerprint.fingerID);
   // found a match!
-  /*Serial.print("Found ID #"); Serial.print(finger.fingerID);
-    Serial.print(" with confidence of "); Serial.println(finger.confidence);*/
-  return finger.fingerID;
+  /*Serial.print("Found ID #"); Serial.print(fingerprint.fingerID);
+    Serial.print(" with confidence of "); Serial.println(fingerprint.confidence);*/
+  return fingerprint.fingerID;
 }
-void presence_marked()
+void presenceMarked()
 {
   lcd.clear();
   lcd.print( "Presence Marked");
 }
-void mettez_doigt()
+void putYourFinger()
 {
   lcd.clear();
   lcd.print( "Put Your Finger");
 }
-void  save_on_memory()
+void  saveOnMemory()
 {
   lcd.clear();
   lcd.print( " Processing...");
@@ -147,37 +136,37 @@ void  save_on_memory()
   if (!SD.begin(4)) {
     while (1);
   }
-  String file = String(hour()) + ":" + String(minute());
+  //String file = String(hour()) + ":" + String(minute());
   //String F=String(day())+"/"+String(month())+"/"+String(year());
-  String T = String(year()) + "/" + String(month()) + "/" + String(day());
-  SD.mkdir(T);
+  String date = String(year()) + "/" + String(month()) + "/" + String(day());
+  SD.mkdir(date);
   //SD.remove("ESTSB.PRS");
-  myFile = SD.open(T + "/l", FILE_WRITE);
+  file = SD.open(date + "/l", FILE_WRITE);
   // if the file opened okay, write to it:
-  if (myFile) {
-    myFile.println(T + "-" + file);
+  if (file) {
+    file.println(date + "-" + file);
     for (int y = 0; y < 80; y++)
     {
-      if (sp[y] == false)
+      if (students[y] == false)
       {
-        myFile.println(String((y + 1)) );
+        file.println(String((y + 1)) );
         
       }
     }
     // close the file:
-    myFile.close();
+    file.close();
     //Serial.println("Done");
   } else {
   }
   // re-open the file for reading:
-  myFile = SD.open("l");
-  if (myFile) {
+  file = SD.open("l");
+  if (file) {
     // Serial.println("file :");
     // read from the file until there's nothing else in it:
-    while (myFile.available()) {
-     //Serial.write(myFile.read());
+    while (file.available()) {
+     //Serial.write(file.read());
     }
-    myFile.close();
+    file.close();
   } else {
     // if the file didn't open, print an error:
     // Serial.println("error opening file");
@@ -185,28 +174,28 @@ void  save_on_memory()
   lcd.clear();
   lcd.print( "Processing End");
   delay(1500);
-  mettez_doigt();
+  putYourFinger();
 }
-void deja_present() {
+void alreadyMarked() {
   lcd.clear();
   lcd.print( "Already Marked");
 }
-void process_student(int i)
+void processStudent(int i)
 {
   if (i >= 1 && i <= 80)
   {
-    if (sp[i - 1] == false)
+    if (students[i - 1] == false)
     {
-      sp[i - 1] = true;
-      presence_marked();
+      students[i - 1] = true;
+      presenceMarked();
     } else {
-      deja_present();
+      alreadyMarked();
     }
   }
   delay(1000);
-  mettez_doigt();
+  putYourFinger();
   if (i == 115 || i == 116 )
   {
-    save_on_memory();
+    saveOnMemory();
   }
 }
